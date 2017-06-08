@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +31,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         container = (View)findViewById(R.id.content);
-        Snackbar.make(container, "nihao",Snackbar.LENGTH_LONG).setAction("Action",null).show();;
+
+
+        Button show_btn = (Button)findViewById(R.id.showsnackbar);
+        show_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(container, "你好",Snackbar.LENGTH_LONG).setAction("Action",null).show();;
+            }
+        });
     }
 
     @Override
